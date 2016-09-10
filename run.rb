@@ -7,7 +7,7 @@ $bot = Discordrb::Commands::CommandBot.new(
 	token: '<token>',
 	application_id: 4PP1D,
 	type: :bot,
-	name: "BeeBoat/1.0",
+	name: "BeeBoat/1.0 by MichiRecRoom#9507 (LikeLakers2 on Github)",
 	#prefix: '@BeeBoat#3658',   #Apparently this doesn't work?
 	prefix: '$%',
 	advanced_functionality: false,
