@@ -1,5 +1,5 @@
 # beeboat
-A bot that joins servers, posts the Bee Movie script to #bee-movie-script, then leaves.
+A bot that joins servers, creates the #bee-movie-script channel, posts the Bee Movie script to #bee-movie-script, then leaves.
 
 
 
