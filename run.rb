@@ -9,7 +9,7 @@ $bot = Discordrb::Commands::CommandBot.new(
 	type: :bot,
 	name: "BeeBoat/1.0",
 	#prefix: '@BeeBoat#3658',   #Apparently this doesn't work?
-	prefix: '?',
+	prefix: '$%',
 	advanced_functionality: false,
 	help_command: false,
 	command_doesnt_exist_message: false,
