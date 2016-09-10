@@ -117,7 +117,7 @@ module BeeScript
 		
 		if c.nil?
 			sleep 1
-			server.leave
+			bot.server(servid).leave
 		else
 			script_thread(bot, servid, c)
 		end
