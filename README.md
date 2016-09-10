@@ -12,3 +12,5 @@ ignored_servers.txt - a line-separated list of servers that are ignored. Useful 
 unfinished_servers.json - a JSON data set for servers that are still in the process of having the script sent to them.
 
 script.txt - Where the script that is sent is stored. Check the Tools directory for a script that will automatically split the messages every 2000 characters.
+
+Also make sure you actually look at the code, and have a decent knowledge of ruby. I will not help debug the bot if you run it.
