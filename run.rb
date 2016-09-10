@@ -42,7 +42,7 @@ $bot.command(:source, help_available: false) do |event|
 	event.respond "I'm BeeBoat, made by MichiRecRoom#9507. You can look at my source code at https://github.com/LikeLakers2/beeboat"
 end
 
-puts "This bot's invite URL is #{$bot.invite_url}."
+puts "This bot's invite URL is #{$bot.invite_url}&permissions=68624 ."
 puts 'Click on it to invite it to your server.'
 
 $bot.run
