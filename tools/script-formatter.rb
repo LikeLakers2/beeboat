@@ -2,7 +2,7 @@
 require 'discordrb'
 
 #read the file we want to split to an array, split by spaces
-s = IO.read("script.txt").split(" ")
+s = IO.read("script2.txt").split(" ")
 
 #Character limit, hopefully this is up-to-date.
 chrlimit = Discordrb::CHARACTER_LIMIT
@@ -48,4 +48,4 @@ end
 
 #Now we wanna store this.
 text_to_store = a.join("\n")
-IO.write("script-formatted.txt", text_to_store)
+IO.write("script2-formatted.txt", text_to_store)

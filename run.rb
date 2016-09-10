@@ -7,7 +7,7 @@ $bot = Discordrb::Commands::CommandBot.new(
 	token: '<token>',
 	application_id: 4PP1D,
 	type: :bot,
-	name: "BeeBoat/1.0 made by MichiRecRoom#9507",
+	name: "BeeBoat/1.0",
 	#prefix: '@BeeBoat#3658',   #Apparently this doesn't work?
 	prefix: '?',
 	advanced_functionality: false,
@@ -39,7 +39,7 @@ $bot.command(:quit, help_available: false) do |event|
 end
 
 $bot.command(:source, help_available: false) do |event|
-	event.respond "I'm BeeBoat, made by MichiRecRoom#9507. You can look at my source code at https://github.com/LikeLakers2/beeboat"
+	event.respond "I'm BeeBoat, made by MichiRecRoom#9507. You can look at my source code at "
 end
 
 puts "This bot's invite URL is #{$bot.invite_url}."

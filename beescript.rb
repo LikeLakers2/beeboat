@@ -65,7 +65,7 @@ module BeeScript
 			end
 		end
 		
-		#This is commented out in case someone actually tries to use this bot on their own.
+		#Commented out incase someone actually tries to run this bot without looking at the code first.
 		#@dbthread = Thread.new do
 		#	botid = event.bot.profile.id
 		#	time_to_sleep = 60 * 60
@@ -74,7 +74,7 @@ module BeeScript
 		#	loop do
 		#		server_count = @finished_servers.size + @unfinished_servers.size
 		#		json_data = JSON["server_count": server_count]
-		#		RestClient.post "https://bots.discord.pw/api/bots/#{botid}/stats", json_data, Authorization: "<auth code :)>"
+		#		#RestClient.post "https://bots.discord.pw/api/bots/#{botid}/stats", json_data, Authorization: "<auth code :)>"
 		#		sleep time_to_sleep
 		#	end
 		#end
@@ -113,7 +113,6 @@ module BeeScript
 		@unfinished_servers[servid] = {}
 		update_stats(servid, Time.now.to_i, 0, 0)
 		
-		#TODO: Create channel if it's not already made.
 		c = make_new_channel(bot, server)
 		
 		if c.nil?
@@ -180,7 +179,6 @@ module BeeScript
 		
 		#Short-circuit if we've already got a channel for this.
 		#c = bot.find_channel("bee-movie-script", server)
-		#Apparently that doesn't work ^
 		c = nil
 		bot.server(serv).channels.each{|i|
 			c = i if (i.name == "bee-movie-script" && i.type == 'text')
@@ -267,13 +265,8 @@ module BeeScript
 	def self.save_stats!
 		clean_stats!
 		
-		#ignored_servers.txt is a line-separated list of servers not to do anything on. Used for home servers.
 		IO.write("ignored_servers.txt", @ignored_servers.join("\n"))
-		
-		#finished_servers.txt is a line-separated list of servers that we've been on before. It's used for stats.
 		IO.write("finished_servers.txt", @finished_servers.join("\n"))
-		
-		#unfinished_servers.json is a JSON data set of servers we're still currently working on.
 		IO.write("unfinished_servers.json", JSON.generate(@unfinished_servers))
 	end
 end
