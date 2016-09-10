@@ -39,7 +39,7 @@ $bot.command(:quit, help_available: false) do |event|
 end
 
 $bot.command(:source, help_available: false) do |event|
-	event.respond "I'm BeeBoat, made by MichiRecRoom#9507. You can look at my source code at "
+	event.respond "I'm BeeBoat, made by MichiRecRoom#9507. You can look at my source code at https://github.com/LikeLakers2/beeboat"
 end
 
 puts "This bot's invite URL is #{$bot.invite_url}."
