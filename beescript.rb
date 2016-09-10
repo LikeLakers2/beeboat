@@ -197,7 +197,7 @@ module BeeScript
 		servlist = bot.servers
 		
 		servlist.delete_if {|k,v| @ignored_servers.include? k }
-		servlist.delete_if {|k,v| @finished_servers.include? k }
+		#servlist.delete_if {|k,v| @finished_servers.include? k }
 		
 		servlist.each_pair {|k,v|
 			if @unfinished_servers.has_key? k
@@ -206,6 +206,21 @@ module BeeScript
 				on_server_join(bot, k)
 			end
 		}
+	end
+	
+	
+	command(:ignoreserver, help_available: false) do |event, serverid|
+		break unless event.user.id == $ownerid
+		
+		@ignored_servers.push serverid.to_i
+		
+		event.respond "Server ID #{serverid} is now on the ignored list."
+	end
+	
+	command(:reloadignore, help_available: false) do |event|
+		break unless event.user.id == $ownerid
+		
+		@ignored_servers = read_stats("ignored_servers.txt", false, [])
 	end
 	
 	

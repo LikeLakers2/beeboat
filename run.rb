@@ -17,13 +17,13 @@ $bot = Discordrb::Commands::CommandBot.new(
 	spaces_allowed: false   #NEVERMIND
 )
 
-@ownerid = 112233445566778899  #Replace with your own ID.
+$ownerid = 112233445566778899  #Replace with your own ID.
 
 $bot.include! BeeScript
 
 #Eval command
 $bot.command(:eval, help_available: false) do |event, *code|
-	break unless event.user.id == @ownerid
+	break unless event.user.id == $ownerid
 	
 	begin
 		eval code.join(' ')
@@ -34,7 +34,7 @@ $bot.command(:eval, help_available: false) do |event, *code|
 end
 
 $bot.command(:quit, help_available: false) do |event|
-	break unless event.user.id == @ownerid
+	break unless event.user.id == $ownerid
 	$bot.stop
 end
 
