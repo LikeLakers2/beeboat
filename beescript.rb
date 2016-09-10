@@ -227,7 +227,9 @@ module BeeScript
 				#JSON doesn't like Integers as key names for some reason.
 				j.inject({}){|memo,(k,v)| memo[k.to_i] = v; memo}
 			else
-				IO.readlines(file)
+				stuff = IO.readlines(file)
+				stuff.each_index {|i| stuff[i] = stuff[i].chomp.to_i }
+				stuff
 			end
 		else
 			default
